@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fl_chart/fl_chart.dart';
 
 import './lineChart1Data.dart';
+import './pieChart1Data.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,13 +14,25 @@ class HomePage extends StatelessWidget {
         title: Text('Home'),
       ),
       backgroundColor: Color(0xFF22173B),
-      body: Container(
-        width: 800, // try to fix width by wrapping with container, ohterwise linechart may try to extend towards infinity.
-        height: 400, // same.
-        child: Padding(
-            padding: const EdgeInsets.all(28.0),
-            child: lineChart1,
+      body: Row(
+        children: [
+          Container(
+            width: 428, // try to fix width by wrapping with container, ohterwise linechart may try to extend towards infinity.
+            height: 428, // same.
+            child: Padding(
+                padding: const EdgeInsets.all(28.0),
+                child: lineChart1,
+              ),
           ),
+          Container(
+            width: 428,
+            height: 428,
+            child: Padding(
+              padding: const EdgeInsets.all(28.0),
+              child: pieChart1,
+            ),
+          )
+        ],
       ),
     );
   }
