@@ -31,7 +31,7 @@ LineChartBarData get lineChartBarData1_1 => LineChartBarData(
       ], //선 색깔 여러개 하면 순서대로 그라데이션 됨^^
       barWidth: 8, //차트 선 굵기
       isStrokeCapRound: true, // line의 캡을 둥글게 한다
-      dotData: FlDotData(show: false), // 데이터 점 동그라미 안보이게 하기
+      dotData: FlDotData(show: true), // 데이터 점 동그라미 안보이게 하기
       //belowBarData: BarAreaData(show: true), // 선 아래를 채우기
       spots: spots1_1,
     );
@@ -68,7 +68,7 @@ LineChartBarData get lineChartBarData1_3 => LineChartBarData(
     );
 
 FlGridData get gridData => FlGridData(
-      show: false,
+      show: true      
       //drawHorizontalLine: false,
       //drawVerticalLine: false,
       //horizontalInterval : 10.0,
@@ -89,17 +89,17 @@ SideTitles get bottomTitles => SideTitles(
         fontWeight: FontWeight.bold,
         fontSize: 16.0,
       ),
-      getTitles: (value) {
-        switch (value.toInt()) {
-          case 2:
-            return 'FEB';
-          case 5:
-            return 'MAY';
-          case 8:
-            return 'AUG';
-        }
-        return '';
-      },
+      // getTitles: (value) {
+      //   switch (value.toInt()) {
+      //     case 2:
+      //       return 'FEB';
+      //     case 5:
+      //       return 'MAY';
+      //     case 8:
+      //       return 'AUG';
+      //   }
+      //   return '';
+      // },
     );
 
 SideTitles get leftTitles => SideTitles(

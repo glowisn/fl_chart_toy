@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: Color(0xFF22173B),
       body: Container(
         width: 800, // try to fix width by wrapping with container, ohterwise linechart may try to extend towards infinity.
-        height: 800, // why this wont work
+        height: 400, // same.
         child: Padding(
             padding: const EdgeInsets.all(28.0),
             child: lineChart1,
