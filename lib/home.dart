@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'linechart1_data.dart';
 import 'piechart1_data.dart';
@@ -29,9 +30,9 @@ class HomePage extends StatelessWidget {
             height: 428,
             child: Padding(
               padding: const EdgeInsets.all(28.0),
-              child: pieChart1,
+               child: pieChart1
+              ),
             ),
-          )
         ],
       ),
     );
