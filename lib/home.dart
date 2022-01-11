@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './lineChart1Data.dart';
-import './pieChart1Data.dart';
+import 'linechart1_data.dart';
+import 'piechart1_data.dart';
 
 
 class HomePage extends StatelessWidget {
