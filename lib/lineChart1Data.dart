@@ -29,9 +29,9 @@ LineChartBarData get lineChartBarData1_1 => LineChartBarData(
         const Color(0xFFF0A645),
         const Color(0xFFD82D36)
       ], //선 색깔 여러개 하면 순서대로 그라데이션 됨^^
-      barWidth: 8, //차트 선 굵기
+      barWidth: 4, //차트 선 굵기
       isStrokeCapRound: true, // line의 캡을 둥글게 한다
-      dotData: FlDotData(show: true), // 데이터 점 동그라미 안보이게 하기
+      dotData: FlDotData(show: false), // 데이터 점 동그라미 안보이게 하기
       //belowBarData: BarAreaData(show: true), // 선 아래를 채우기
       spots: spots1_1,
     );
@@ -42,7 +42,7 @@ LineChartBarData get lineChartBarData1_2 => LineChartBarData(
         const Color(0xff27b6fc),
         const Color(0xFF86FD37),
       ],
-      barWidth: 8,
+      barWidth: 4,
       isStrokeCapRound: true,
       dotData: FlDotData(show: false),
       belowBarData: BarAreaData(
@@ -61,17 +61,16 @@ LineChartBarData get lineChartBarData1_3 => LineChartBarData(
         const Color(0xFF8356FF),
         const Color(0xFFF4A0FF),
       ],
-      barWidth: 8,
+      barWidth: 4,
       isStrokeCapRound: true,
       dotData: FlDotData(show: false),
       spots: spots1_3,
     );
 
-FlGridData get gridData => FlGridData(
-      show: true      
-      //drawHorizontalLine: false,
-      //drawVerticalLine: false,
-      //horizontalInterval : 10.0,
+FlGridData get gridData => FlGridData(show: true
+    //drawHorizontalLine: false,
+    //drawVerticalLine: false,
+    //horizontalInterval : 10.0,
     );
 
 FlTitlesData get titleData => FlTitlesData(
@@ -89,17 +88,17 @@ SideTitles get bottomTitles => SideTitles(
         fontWeight: FontWeight.bold,
         fontSize: 16.0,
       ),
-      // getTitles: (value) {
-      //   switch (value.toInt()) {
-      //     case 2:
-      //       return 'FEB';
-      //     case 5:
-      //       return 'MAY';
-      //     case 8:
-      //       return 'AUG';
-      //   }
-      //   return '';
-      // },
+      getTitles: (value) {
+        switch (value.toInt()) {
+          case 2:
+            return 'FEB';
+          case 5:
+            return 'MAY';
+          case 8:
+            return 'AUG';
+        }
+        return '';
+      },
     );
 
 SideTitles get leftTitles => SideTitles(
@@ -125,8 +124,12 @@ FlBorderData get borderData => FlBorderData(
 
 LineTouchData get lineTouchData => LineTouchData(
       handleBuiltInTouches: true,
-      touchTooltipData: LineTouchTooltipData(
+      touchTooltipData: LineTouchTooltipData( // 마우스 올릴 시 나오는 툴팁 데이터에 관한 설정
         tooltipBgColor: Colors.white60,
         tooltipRoundedRadius: 20,
+        fitInsideHorizontally: true,
+        fitInsideVertically: true, // 툴팁 데이터가 차트 밖으로 나가지 않게 함
+        maxContentWidth: 24.0,
+        //rotateAngle: 20, 
       ),
     );

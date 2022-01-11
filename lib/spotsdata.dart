@@ -30,15 +30,15 @@ List<FlSpot> spots1_2 = [
 ];
 
 List<FlSpot> spots1_3 = [
-  FlSpot(0, Random().nextDouble() * 10),
-  FlSpot(1, Random().nextDouble() * 10),
-  FlSpot(2, Random().nextDouble() * 10),
-  FlSpot(3, Random().nextDouble() * 10),
-  FlSpot(4, Random().nextDouble() * 10),
-  FlSpot(5, Random().nextDouble() * 10),
-  FlSpot(6, Random().nextDouble() * 10),
-  FlSpot(7, Random().nextDouble() * 10),
-  FlSpot(8, Random().nextDouble() * 10),
-  FlSpot(9, Random().nextDouble() * 10),
-  FlSpot(10, Random().nextDouble() * 10),
+  for (double i = 0; i <= 10; i++) ...{
+    getSpot(i),
+  }
 ];
+
+FlSpot getSpot(double i) {
+  double n = double.parse((Random().nextDouble() * 9.0).toStringAsFixed(1));
+  if (n.remainder(1) == 0) {
+    n += 0.1;
+  }
+  return FlSpot(i, n);
+}
