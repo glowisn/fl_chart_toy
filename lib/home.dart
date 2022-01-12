@@ -1,9 +1,8 @@
+import 'package:fl_chart_toy/piepie.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'linechart1_data.dart';
-import 'piechart1_data.dart';
-
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,21 +17,19 @@ class HomePage extends StatelessWidget {
       body: Row(
         children: [
           Container(
-            width: 428, // try to fix width by wrapping with container, ohterwise linechart may try to extend towards infinity.
+            width:
+                428, // try to fix width by wrapping with container, ohterwise linechart may try to extend towards infinity.
             height: 428, // same.
             child: Padding(
-                padding: const EdgeInsets.all(28.0),
-                child: lineChart1,
-              ),
-          ),
-          Container(
-            width: 428,
-            height: 428,
-            child: Padding(
               padding: const EdgeInsets.all(28.0),
-               child: pieChart1
-              ),
+              child: lineChart1,
             ),
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Get.to(pieView());
+              },
+              child: Text("Go to Page"))
         ],
       ),
     );
