@@ -1,4 +1,6 @@
+import 'package:fl_chart_toy/pie2.dart';
 import 'package:fl_chart_toy/piepie.dart';
+import 'package:fl_chart_toy/synfusion_semi_circular.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,10 +28,23 @@ class HomePage extends StatelessWidget {
             ),
           ),
           ElevatedButton(
-              onPressed: () {
-                Get.to(pieView());
-              },
-              child: Text("Go to Page"))
+            onPressed: () {
+              Get.to(pieView());
+            },
+            child: Text("Go to Pie1"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Get.to(Pie2());
+            },
+            child: Text("Go to Pie2"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Get.to(SemiCircle());
+            },
+            child: Text("Go to Syncfusion_semi_circle"),
+          )
         ],
       ),
     );
